@@ -22,6 +22,8 @@ for line in fileinput.input("./install.sql", inplace=True):
 for line in fileinput.input("./install.sql", inplace=True): 
 	print line.rstrip().replace('DB_HOST', data['DB_HOST'])
 
+os.rename("DB_NAME.sql", data['DB_NAME'] + ".sql") 
+
 print("Finish Generate")
 os.system("mysql -u root -p < install.sql")
 print("Finish Install")
