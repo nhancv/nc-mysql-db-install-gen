@@ -23,7 +23,7 @@ for line in fileinput.input("./install.sql", inplace=True):
 	print line.rstrip().replace('DB_HOST', data['DB_HOST'])
 
 print("Finish Generate")
-os.system(sh install.sh)
+os.system("mysql -u root -p < install.sql")
 print("Finish Install")
 
 
